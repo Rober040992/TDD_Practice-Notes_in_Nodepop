@@ -58,4 +58,7 @@ describe.only("Testear con valores no numericos", () => {
         expect(() => suma('a', 'a')).toThrow();
     });
     // Solo aceptamos valores numericos
+    test("Sumar 'a' y '1' debe devolver un error", () => {
+        expect(() => suma('a', '1')).toThrow();
+    });
 })
