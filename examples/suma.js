@@ -1,4 +1,8 @@
 function suma(a, b) {
-    return a + b;
+  if (b == 'a' || a == 'a') {
+      throw new Error('Must be a number');
   }
-  module.exports = suma;
+
+  return a + b;
+}
+module.exports = suma;
