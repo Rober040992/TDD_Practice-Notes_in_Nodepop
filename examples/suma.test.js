@@ -1,5 +1,5 @@
 const suma = require('./suma');
-
+ // Solid. Cada test una responsabilidad
 describe("Funcion suma", () => {
 
     test("Sumar 0 + 0 es igual a 0", () => {
@@ -21,7 +21,7 @@ describe("Funcion suma", () => {
     
    /*  esto no funciona por que :  
    JS trata a los flotantes "mal"
-   
+
     test('suma(0.1, 0.2)).toBe(0.3)', () => {
         expect(suma(0.1, 0.2)).toBe(0.3);
     }) 
@@ -30,4 +30,15 @@ describe("Funcion suma", () => {
     Received: 0.30000000000000004
     para que funcione deberiamos usar .toBeCloseTo instead of .toBe
     */
+})
+
+describe("Función sum con valores negativos", () => {
+    it('Sumar 1 + -1 es igual a 0', () => {
+        expect(suma(1, -1)).toBe(0);
+    })
+
+    it("Sumar -1 + -3 debe dar un valor negativo", () => {
+        expect(suma(-1, 3)).toBeGreaterThan(0);
+        expect(suma(-1, -0.3)).not.toBeGreaterThan(0);
+    })
 })
