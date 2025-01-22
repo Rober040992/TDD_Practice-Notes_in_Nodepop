@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "start": "cross-env NODEAPP_ENV=production node server.js",
     "dev": "cross-env DEBUG=nodeapp:* NODEAPP_ENV=development nodemon server.js",
     "initDB": "node initDB.js"

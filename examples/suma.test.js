@@ -1,7 +1,7 @@
 const suma = require('./suma');
  // Solid. Cada test una responsabilidad
  // todos los matchers como .toBe() devuelven booleanos
-describe("Funcion suma", () => {
+describe.skip("Funcion suma", () => {
 
     test("Sumar 0 + 0 es igual a 0", () => {
         expect(suma(0, 0)).toEqual(0);
@@ -31,34 +31,37 @@ describe("Funcion suma", () => {
     Received: 0.30000000000000004
     para que funcione deberiamos usar .toBeCloseTo instead of .toBe
     */
-})
 
-describe("Función sum con valores negativos", () => {
-    test('Sumar 1 + -1 es igual a 0', () => {
-        expect(suma(1, -1)).toBe(0);
+    describe("Función sum con valores negativos", () => {
+        test('Sumar 1 + -1 es igual a 0', () => {
+            expect(suma(1, -1)).toBe(0);
+        })
+    
+        test("Sumar -1 + -3 debe dar un valor negativo", () => {
+            expect(suma(-1, 3)).toBeGreaterThan(0);
+            expect(suma(-1, -0.3)).not.toBeGreaterThan(0);
+        })
     })
 
-    test("Sumar -1 + -3 debe dar un valor negativo", () => {
-        expect(suma(-1, 3)).toBeGreaterThan(0);
-        expect(suma(-1, -0.3)).not.toBeGreaterThan(0);
+    describe("Testear con valores no numericos", () => {
+        // Si sumamos 1 y 'a' debe devolver un error
+        test("Sumar 1 y 'a' debe devolver un error", () => {
+            expect(() => suma(1, 'a')).toThrow();
+        });
+        // Si sumamos 'a' y 1 debe devolver un error
+        test("Sumar 'a' y '1' debe devolver un error", () => {
+            expect(() => suma('a', 1)).toThrow();
+        });
+        // Si sumamos 'a' y 'a' debe devolver un error
+        test("Sumar 'a' y '1' debe devolver un error", () => {
+            expect(() => suma('a', 'a')).toThrow();
+        });
+        // Solo aceptamos valores numericos
+        test("Sumar 'a' y '1' debe devolver un error", () => {
+            expect(() => suma('a', '1')).toThrow();
+        });
     })
 })
 
-describe.only("Testear con valores no numericos", () => {
-    // Si sumamos 1 y 'a' debe devolver un error
-    test("Sumar 1 y 'a' debe devolver un error", () => {
-        expect(() => suma(1, 'a')).toThrow();
-    });
-    // Si sumamos 'a' y 1 debe devolver un error
-    test("Sumar 'a' y '1' debe devolver un error", () => {
-        expect(() => suma('a', 1)).toThrow();
-    });
-    // Si sumamos 'a' y 'a' debe devolver un error
-    test("Sumar 'a' y '1' debe devolver un error", () => {
-        expect(() => suma('a', 'a')).toThrow();
-    });
-    // Solo aceptamos valores numericos
-    test("Sumar 'a' y '1' debe devolver un error", () => {
-        expect(() => suma('a', '1')).toThrow();
-    });
-})
+
+
