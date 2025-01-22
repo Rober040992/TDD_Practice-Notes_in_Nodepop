@@ -1,5 +1,8 @@
 // Funcion para calcular la media de un array de valores
 function calculateAverage(array) {
+    if (array.length === 0) {
+        return NaN
+    }
     return array.reduce((acc, current) => acc + current) / array.length;
   }
   
