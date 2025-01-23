@@ -1,4 +1,4 @@
-const suma = require('./suma');
+import suma from './suma'
  // Solid. Cada test una responsabilidad
  // todos los matchers como .toBe() devuelven booleanos
 describe.skip("Funcion suma", () => {
