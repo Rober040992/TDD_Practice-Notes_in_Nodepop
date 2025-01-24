@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//usamos la web https://httpbin.org/ para crear peticiones con respuestas de status reales
 const BASE_URL = 'https://httpbin.org';
 
 export function successfullRequest() {
