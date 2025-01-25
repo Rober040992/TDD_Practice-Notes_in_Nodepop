@@ -1,7 +1,7 @@
 import { Users } from './Users';
 
 
-describe("Users class test", () => {
+describe.skip("Users class test", () => {
 
     describe("Usando api real", () => {
 

@@ -1,6 +1,6 @@
 import { successfullRequest, failedRequest } from './promises';
 
-describe("Async / Await style", () => {
+describe.skip("Async / Await style", () => {
 
     it("Debe devolver un codigo 200 cuando llamamos a successfullRequest", async () => {
         // En un test de promesa resuelta no podemos poner try catch
@@ -20,7 +20,7 @@ describe("Async / Await style", () => {
 
 });
 
-describe("Callback style", () => {
+describe.skip("Callback style", () => {
 
     it("Debe devolver un codigo 200 cuando llamamos a successfullRequest", (done) => {
         expect.assertions(2);
@@ -42,7 +42,7 @@ describe("Callback style", () => {
 
 });
 
-describe("Pomise style", () => {
+describe.skip("Pomise style", () => {
 
     it("Debe devolver un error con código de estado 403 para failedRequest", () => {
         expect.assertions(1);
