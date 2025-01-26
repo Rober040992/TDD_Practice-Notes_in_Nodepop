@@ -8,6 +8,8 @@
     "test": "jest --verbose",
     "test:module": "jest",
     "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --forceExit",
+    "test:ci": "npm run test:module --json -- --forceExit",
     "start": "cross-env NODEAPP_ENV=production node server.js",
     "dev": "cross-env DEBUG=nodeapp:* NODEAPP_ENV=development nodemon server.js",
     "initDB": "node initDB.js"

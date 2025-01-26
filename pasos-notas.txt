@@ -41,3 +41,7 @@ y en el json;
     presets: [['@babel/preset-env', {targets: {node: 'current'}}]],
 };
 
+
+
+para correr un test con coverage y crear un file .json con todos los datos: npm run test:coverage -- --json > coverage.json
+si lo queremos crear sin json tal cual nos sale por consola solo necesitamos usar npm run test:coverage > coverage.json
